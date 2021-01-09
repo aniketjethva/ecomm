@@ -26,7 +26,7 @@ define( 'DB_NAME', 'e_comm_db' );
 define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'Test@123' );
+define( 'DB_PASSWORD', 'admin@123' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
