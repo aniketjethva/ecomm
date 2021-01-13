@@ -157,3 +157,19 @@ if ( version_compare( PHP_VERSION, '5.3', '>=' ) ) {
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+function my_custom_js() {
+    echo '<script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>';
+}
+// Add hook for admin <head></head>
+add_action( 'admin_head', 'my_custom_js' );
+// Add hook for front-end <head></head>
+add_action( 'wp_head', 'my_custom_js' );
+add_action( 'wp_enqueue_scripts', 'register_custom_plugin_styles' );
+
+/**
+ * Register style sheet.
+ */
+function register_custom_plugin_styles() {
+    wp_register_style( 'my-stylesheet', 'https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css' );
+    wp_enqueue_style( 'my-stylesheet' );
+}

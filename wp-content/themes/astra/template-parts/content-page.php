@@ -28,7 +28,18 @@
 
 	<header class="entry-header <?php astra_entry_header_class(); ?>">
 
-		<?php astra_get_post_thumbnail(); ?>
+		<?php //astra_get_post_thumbnail(); ?>
+		<div class="owl-carousel owl-theme">
+		    <div class="item">
+		    	<img src="http://localhost/ecomm/wp-content/uploads/2021/01/1-1024x683.jpg">
+		   	</div>
+		    <div class="item">
+		    	<img src="http://localhost/ecomm/wp-content/uploads/2021/01/1-1024x683.jpg">
+		    </div>
+		    <div class="item">
+		    	<img src="http://localhost/ecomm/wp-content/uploads/2021/01/1-1024x683.jpg">
+		    </div> 
+		</div>
 
 		<?php
 		astra_the_title(
@@ -90,3 +101,24 @@
 </article><!-- #post-## -->
 
 <?php astra_entry_after(); ?>
+<script type="text/javascript">
+	jQuery( document ).ready(function() 
+	{
+    	jQuery('.owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:1
+		        },
+		        1000:{
+		            items:1
+		        }
+		    }
+		})
+	});
+</script>
